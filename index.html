@@ -1,51 +1,86 @@
 <html>
-<head
-
-
+<head>
+	<title>LightSpeed altcoin exchange</title>
 </head>
-
-
-
 <body>
-<p>Exchange rate:</p>
-<p>1 doge er
-<p id="demo">Ooops</p>
+<p>deposit
+<select name="mySelect1" id="mySelect1";>
+    <option value="btc">Bitcoin</option>
+    <option value="doge">Dogecoin</option>
+	<option value="ltc">Litecoin</option>
+	<option value="drk">Darkcoin</option>
+	<option value="nmc">Namecoin</option>
+	<option value="ppc">Peercoin</option>
+	<option value="ftc">Feathercoin</option>
+	<option value="blk">Blackcoin</option>
+	<option value="nxt">NXT</option>
+	<option value="btcd">Bitcoin Dark</option>
+	<option value="qrk">Quark</option>
+	<option value="rdd">Redcoin</option>
+	<option value="nbt">Nubits</option>
+</select></p>
+<p>receive
+<select name="mySelect2" id="mySelect2";>
+    <option value="btc">Bitcoin</option>
+    <option value="doge">Dogecoin</option>
+	<option value="ltc">Litecoin</option>
+	<option value="drk">Darkcoin</option>
+	<option value="nmc">Namecoin</option>
+	<option value="ppc">Peercoin</option>
+	<option value="ftc">Feathercoin</option>
+	<option value="blk">Blackcoin</option>
+	<option value="nxt">NXT</option>
+	<option value="btcd">Bitcoin Dark</option>
+	<option value="qrk">Quark</option>
+	<option value="rdd">Redcoin</option>
+	<option value="nbt">Nubits</option>
+</select></p>
+<p>Receiving address: 
+<input type="text" id="userInput"=></input>
+</p>
+<button onclick="test()">Submit</button>
+<p>Deposit coins into the address generated below and wait.
+<p id="demo">Please input bitcoin receiving address</p>
+
+
 
 <script>
+
+function test() {
+            var userInput = document.getElementById("userInput").value;
+			var sel1 = document.getElementById('mySelect1');
+			var pair1 = sel1.options[sel1.selectedIndex].value;
+			var sel2 = document.getElementById('mySelect2');
+			var pair2 = sel2.options[sel2.selectedIndex].value;
+
 var Request = new XMLHttpRequest();
 
-Request.open('GET', 'http://shapeshift.io/rate/doge_btc');
+Request.open("POST", "https://shapeshift.io/shift");
+
+Request.setRequestHeader("Content-Type", "application/json");
 
 Request.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
+  if (this.readyState === 4) {
+    console.log("Status:", this.status);
+    console.log("Headers:", this.getAllResponseHeaders());
+    console.log("Body:", this.responseText);
 	var str = this.responseText;
-	if(str.length > 10) str = str.substring(27,33)+" btc";
+	if(str.length > 10) str = str.substring(12,46)+"";
 	document.getElementById("demo").innerHTML = (str);
   }
 };
 
-Request.send(JSON.stringify());
+var body = {
+  "withdrawal": userInput,
+  "pair": pair1 + "_" + pair2,
+  "returnAddress": "DJxdfLeArBMA1HQwZk7wMKpfEfTRr17kZQ"
+};
 
+Request.send(JSON.stringify(body));
+}
 
- function cutString(id){    
-     var text = document.getElementById(id).innerHTML;         
-     var charsToCutTo = 8;
-        if(text.length>charsToCutTo){
-            var strShort = "";
-            for(i = 0; i < charsToCutTo; i++){
-                strShort += text[i];
-            }
-            document.getElementById(id).title = "text";
-            document.getElementById(id).innerHTML = strShort + "...";
-        }            
-     };
-cutString("demo")
 </script>
 
+
 </body>
-
-
 </html>

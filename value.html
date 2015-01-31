@@ -1,0 +1,51 @@
+<html>
+<head
+
+
+</head>
+
+
+
+<body>
+<p>Exchange rate:</p>
+<p>1 doge er
+<p id="demo">Ooops</p>
+
+<script>
+var Request = new XMLHttpRequest();
+
+Request.open('GET', 'http://shapeshift.io/rate/doge_btc');
+
+Request.onreadystatechange = function () {
+  if (this.readyState == 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+	var str = this.responseText;
+	if(str.length > 10) str = str.substring(27,33)+" btc";
+	document.getElementById("demo").innerHTML = (str);
+  }
+};
+
+Request.send(JSON.stringify());
+
+
+ function cutString(id){    
+     var text = document.getElementById(id).innerHTML;         
+     var charsToCutTo = 8;
+        if(text.length>charsToCutTo){
+            var strShort = "";
+            for(i = 0; i < charsToCutTo; i++){
+                strShort += text[i];
+            }
+            document.getElementById(id).title = "text";
+            document.getElementById(id).innerHTML = strShort + "...";
+        }            
+     };
+cutString("demo")
+</script>
+
+</body>
+
+
+</html>
