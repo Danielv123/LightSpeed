@@ -2,8 +2,20 @@
 <head>
 	<title>LightSpeed altcoin exchange</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery-2.1.3.min.js"></script>
 </head>
 <body>
+<div id="header">
+<a href="#page">Back to top</a>
+
+
+</div>
+<div id="page">
+
+
+
+
+
 <p>Deposit
 <select name="mySelect1" id="mySelect1";>
     <option value="btc">Bitcoin</option>
@@ -43,9 +55,12 @@
 <p>Deposit coins into the address generated below and wait.
 <p id="demo">Please input bitcoin receiving address</p>
 
-
+</div> <!-- End of div "page" -->
 
 <script>
+
+//Exchange api usage thingy
+//This is where the magick happens
 
 function test() {
     var userInput = document.getElementById("userInput").value;
@@ -79,6 +94,27 @@ var body = {
 
 Request.send(JSON.stringify(body));
 }
+
+//End of magick
+
+//Smooth anchors
+
+$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+// End of dark magick
 
 </script>
 
