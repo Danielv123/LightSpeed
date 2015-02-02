@@ -71,9 +71,29 @@ Request.onreadystatechange = function () {
     console.log('Status:', this.status);
     console.log('Headers:', this.getAllResponseHeaders());
     console.log('Body:', this.responseText);
-	txStatReturn = this.responseText;
+	var status = this.responseText;
+	var statusDeposit = -1
+	var statusReceived = -1
+	var statusCompleted = -1
+	var statusFailed = -1
+	var statusDeposit = status.search("no_deposit")
+	var statusReceived = status.search("received")
+	var statusCompleted = status.search("complete")
+	var statusFailed = status.search("failed")
 	
-	setTimeout("deposithistory()", 3000);
+	if (statusDeposit > 1) {
+	document.getElementById("depositInfo").innerHTML = ("Waiting for depossit");
+	}
+	if (statusReceived > 1) {
+	document.getElementById("depositInfo").innerHTML = ("Deposit received");
+	}
+	if (statusCompleted > 1) {
+	document.getElementById("depositInfo").innerHTML = ("Trade complete");
+	}
+	if (statusFailed > 1) {
+	document.getElementById("depositInfo").innerHTML = ("Error: 418 - Transaction failed");
+	}
+	setTimeout("deposithistory()", 5000);
   }
 };
 var body = "test";
