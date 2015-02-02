@@ -25,6 +25,7 @@ input, select    {
 			height: 60px;
 			margin: 0;
 			padding: 0px;
+			position: fixed;
 }
 
 body {
