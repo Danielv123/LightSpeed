@@ -30,6 +30,13 @@ Request.onreadystatechange = function () {
 	var status1Pair = status.search("Unknown Exchange")
 	var status1InvalidA = status.search("Invalid Address")
 	
+	if (status1Pair > 1) {
+	document.getElementById("demo").innerHTML = ("Error 100 - Invalid exchange pair");
+	}
+	if (status1InvalidA > 1) {
+	document.getElementById("demo").innerHTML = ("Error 101 - Invalid address");
+	}
+	
 	var status = this.responseText;
 	deposithistory()
 	
