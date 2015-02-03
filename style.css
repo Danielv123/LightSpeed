@@ -14,6 +14,7 @@ textarea:focus, input:focus {
 
 body {
 	display: block;
+	background-color: #E6E6E6;
 }
 
 #page {
@@ -32,11 +33,9 @@ body {
 	position: fixed;
 }
 
-body {
-	background-color: #E6E6E6;
-		
+#receive, #deposit {
+	float: left;
 }
-
 
 p {
 	font-family:verdana;
