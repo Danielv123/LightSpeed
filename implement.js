@@ -21,9 +21,16 @@ Request.onreadystatechange = function () {
     console.log("Headers:", this.getAllResponseHeaders());
     console.log("Body:", this.responseText);
 	var str = this.responseText;
+	var status1 = this.responseText;
 	if(str.length > 10) str = str.substring(12,46)+"";
 	document.getElementById("demo").innerHTML = (str);
 	
+	var status1Pair = -1
+	var status1InvallidA = -1
+	var status1Pair = status.search("Unknown Exchange")
+	var status1InvalidA = status.search("Invalid Address")
+	
+	var status = this.responseText;
 	deposithistory()
 	
 	while (txStatReturn.indexOf("no_deposit") > -1) {
