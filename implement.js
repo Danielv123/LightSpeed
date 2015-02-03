@@ -89,7 +89,7 @@ Request.onreadystatechange = function () {
 	var statusFailed = status.search("failed")
 	
 	if (statusDeposit > 1) {
-	document.getElementById("depositInfo").innerHTML = ("Waiting for depossit");
+	document.getElementById("depositInfo").innerHTML = ("Waiting for deposit");
 	}
 	if (statusReceived > 1) {
 	document.getElementById("depositInfo").innerHTML = ("Deposit received");
