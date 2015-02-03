@@ -15,6 +15,7 @@ textarea:focus, input:focus {
 body {
 	display: block;
 	background-color: #E6E6E6;
+	margin: 0;
 }
 
 #page {
@@ -37,6 +38,9 @@ body {
 	float: left;
 }
 
+#depositr {
+	text-align: center;
+}
 p {
 	font-family:verdana;
 	}
