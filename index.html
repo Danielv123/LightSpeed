@@ -12,6 +12,7 @@
 <div id="page">
 <p>Spacer</p>
 <p>Spacer</p>
+<div id="deposit"> <!-- Start of div deposit -->
 <p>Deposit <!-- Coins traded. Please don't add new ones the API does not support -->
 <select name="mySelect1" id="mySelect1";>
     <option value="btc">Bitcoin</option>
@@ -27,7 +28,8 @@
 	<option value="qrk">Quark</option>
 	<option value="rdd">Redcoin</option>
 	<option value="nbt">Nubits</option>
-</select></p>
+</select></p></div> <!-- End of div deposit -->
+<div id="receive"> <!-- Start of div receive -->
 <p>Receive
 <select name="mySelect2" id="mySelect2";>
     <option value="btc">Bitcoin</option>
@@ -43,7 +45,7 @@
 	<option value="qrk">Quark</option>
 	<option value="rdd">Redcoin</option>
 	<option value="nbt">Nubits</option>
-</select></p>
+</select></p></div> <!-- end of div receive -->
 <p>Receiving address: <input type="text" id="userInput"=></input></p>
 <button onclick="test()">Submit</button>
 <p>Deposit coins into the address generated below and wait.
