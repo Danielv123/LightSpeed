@@ -27,8 +27,8 @@ Request.onreadystatechange = function () {
 	
 	var status1Pair = -1
 	var status1InvallidA = -1
-	var status1Pair = status.search("Unknown Exchange")
-	var status1InvalidA = status.search("Invalid Address")
+	var status1Pair = status1.search("Unknown Exchange")
+	var status1InvalidA = status1.search("Invalid Address")
 	
 	if (status1Pair > 1) {
 	document.getElementById("demo").innerHTML = ("Error 100 - Invalid exchange pair");
