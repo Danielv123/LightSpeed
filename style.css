@@ -2,15 +2,25 @@ input, select    {
 	width:375px;
 	display:block;
 	border: 1px solid #999;
-	height: 25px;
+	height: 50px;
 	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	/* css 3 */
+	border-radius:10px;
+	/* mozilla */
+	-moz-border-radius:10px;
+	/* webkit */
+	-webkit-border-radius:10px;
 }
 
 textarea:focus, input:focus {
 	border: 1px solid #09C;
 }
+
+optgroup {
+	font-size:14px;
+	}
 
 body {
 	display: block;

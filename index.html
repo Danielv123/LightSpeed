@@ -2,10 +2,15 @@
 <head>
 	<title>LightSpeed altcoin exchange</title> <!-- Title! The name is not set in stone, please provide alternatives -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="implement.js"></script>
 </head>
 <body>
+
+		<!--[if lt IE 7]>
+            <h1>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</h1>
+        <![endif]-->
+
 <div id="header"> <!-- Start of div header -->
 <a href="#page">Back to top</a>
 </div> <!-- End of div header -->
@@ -15,9 +20,10 @@
 <div id="exchangeCenterDiv">
 <div id="deposit"> <!-- Start of div deposit -->
 <center><p>Deposit</p></center> <!-- Coins traded. Please don't add new ones the API does not support -->
+
 <select name="mySelect1" id="mySelect1";>
     <option value="btc">Bitcoin</option>
-    <option value="doge">Dogecoin</option>
+    <option value="doge" selected="selected">Dogecoin</option>
 	<option value="ltc">Litecoin</option>
 	<option value="drk">Darkcoin</option>
 	<option value="nmc">Namecoin</option>
@@ -30,10 +36,11 @@
 	<option value="rdd">Redcoin</option>
 	<option value="nbt">Nubits</option>
 </select></div> <!-- End of div deposit -->
+
 <div id="receive"> <!-- Start of div receive -->
 <center><p>Receive</p></center>
 <select name="mySelect2" id="mySelect2";>
-    <option value="btc">Bitcoin</option>
+    <option value="btc" selected="selected">Bitcoin</option>
     <option value="doge">Dogecoin</option>
 	<option value="ltc">Litecoin</option>
 	<option value="drk">Darkcoin</option>
@@ -46,8 +53,9 @@
 	<option value="qrk">Quark</option>
 	<option value="rdd">Redcoin</option>
 	<option value="nbt">Nubits</option>
-</select></div> <!-- end of div receive -->
-<p>Receiving address: <input type="text" id="userInput"=></input></p>
+</select></div> <!-- End of div receive -->
+
+<p>Receiving address: <input type="text" id="userInput" placeholder="Input your receiving address here"></input></p>
 </div>
 <button onclick="test()">Submit</button>
 <p>Deposit coins into the address generated below and wait.
