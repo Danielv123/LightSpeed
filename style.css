@@ -26,7 +26,7 @@ body {
 	width:800px;
 	height: 100%;
 	background-color: white;
-	box-shadow: 0 5 5 0 gray;
+	box-shadow: 0 5 5 0 #00ff00;
 }
 
 #header {
