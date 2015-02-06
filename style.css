@@ -26,7 +26,9 @@ body {
 	width:800px;
 	height: 100%;
 	background-color: white;
-	box-shadow: 0px 5px 5px 0px #00ff00;
+	-webkit-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
 }
 
 #header {
