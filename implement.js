@@ -107,7 +107,7 @@ Request.onreadystatechange = function () {
 	if (statusFailed > 1) {
 	document.getElementById("depositInfo").innerHTML = ("Error: 418 - Transaction failed");
 	}
-	setTimeout("deposithistory()", 5000);
+	setTimeout("deposithistory()", 5000); /*delay*/
   }
 };
 var body = "test";
