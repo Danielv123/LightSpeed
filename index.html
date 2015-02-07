@@ -17,6 +17,7 @@
 <div id="page">
 <p>Spacer</p>
 <p>Spacer</p>
+<form>
 <div id="exchangeCenterDiv">
 <div id="deposit"> <!-- Start of div deposit -->
 <center><p>Deposit</p></center> <!-- Coins traded. Please don't add new ones the API does not support -->
@@ -55,9 +56,10 @@
 	<option value="nbt">Nubits</option>
 </select></div> <!-- End of div receive -->
 
-<p>Receiving address: <input type="text" id="userInput" placeholder="Input your receiving address here"></input></p>
+<p>Receiving address: <input type="text" id="userInput" autofocus placeholder="Input your receiving address here" required></input></p>
 </div>
 <button onclick="test()">Submit</button>
+</form>
 <p>Deposit coins into the address generated below and wait.
 <!-- JS display fields below -->
 <p id="demo">Please input bitcoin receiving address</p>
