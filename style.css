@@ -1,4 +1,7 @@
-input, select    {
+#userInput, select, option    {
+	font-size:16px;
+	font-family:verdana;
+	text-align:center;
 	width:375px;
 	display:block;
 	border: 1px solid #999;
@@ -11,15 +14,17 @@ input, select    {
 	-webkit-border-radius:10px;
 }
 
-textarea:focus, input:focus {
-	border: 1px solid #09C;
-}
-
 body {
 	display: block;
 	background-color: #E6E6E6;
 	margin: 0;
 }
+
+#graphicalSubmit {
+	height:30px;
+	width:90px;
+	margin:0px auto;
+	}
 
 #page {
 	margin:0px auto;
@@ -44,6 +49,11 @@ body {
 	float: left;
 }
 
+#receivingInputField {
+	width:375px;
+	margin:0px auto;
+	}
+	
 #depositr {
 	text-align: center;
 }
@@ -55,8 +65,3 @@ p {
 #footerText {
 	font-size:8px;
 	}
-	
-#exchangeCenterDiv {
-	margin: 0px auto;
-	
-}

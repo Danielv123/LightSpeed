@@ -17,11 +17,10 @@
 <div id="page">
 <p>Spacer</p> <!-- Terrible way to do this, I know... -->
 <p>Spacer</p>
-<form>
-<div id="exchangeCenterDiv">
+
+
 <div id="deposit"> <!-- Start of div deposit -->
 <center><p>Deposit</p></center> <!-- Coins traded. Please don't add new ones the API does not support -->
-
 <select name="mySelect1" id="mySelect1";>
     <option value="btc">Bitcoin</option>
     <option value="doge" selected="selected">Dogecoin</option>
@@ -56,10 +55,14 @@
 	<option value="nbt">Nubits</option>
 </select></div> <!-- End of div receive -->
 
-<p>Receiving address: <input type="text" id="userInput" autofocus placeholder="Input your receiving address here" required></input></p>
-</div>
-<button onclick="test()">Submit</button>
-</form>
+<div id="receivingInputField"> <!-- Start of div receivingInputField -->
+<center><p>Receiving address:</p></center>
+<input type="text" id="userInput" autofocus placeholder="Input your receiving address here" required></input>
+</div> <!-- End of div receivingInputField -->
+
+<input type="image" src="img1.png" onclick="test()" id="graphicalSubmit">
+
+
 <p>Deposit coins into the address generated below and wait.
 <!-- JS display fields below -->
 <p id="demo">Please input bitcoin receiving address</p>
