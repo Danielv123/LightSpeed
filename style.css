@@ -51,6 +51,11 @@ body {
 p {
 	font-family:verdana;
 	}
+	
+#footerText {
+	font-size:8px;
+	}
+	
 #exchangeCenterDiv {
 	margin: 0px auto;
 	
