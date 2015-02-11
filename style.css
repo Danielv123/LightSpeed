@@ -18,6 +18,8 @@ body {
 	display: block;
 	background-color: #E6E6E6;
 	margin: 0;
+    -webkit-animation: bodyFade 5s; /* Chrome, Safari, Opera */
+    animation: bodyFade 5s;
 }
 
 #graphicalSubmit {
@@ -65,3 +67,49 @@ p {
 #footerText {
 	font-size:8px;
 	}
+
+.submit {
+   border-top: 1px solid #0064a6;
+   background: #0064a6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#0064a6), to(#0064a6));
+   background: -webkit-linear-gradient(top, #0064a6, #0064a6);
+   background: -moz-linear-gradient(top, #0064a6, #0064a6);
+   background: -ms-linear-gradient(top, #0064a6, #0064a6);
+   background: -o-linear-gradient(top, #0064a6, #0064a6);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 12px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.submit:hover {
+   border-top-color: #004573;
+   background: #004573;
+   color: #ffffff;
+   }
+.submit:active {
+   border-top-color: #005085;
+   background: #005085;
+   }
+
+	
+/* Body fade animation */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes bodyFade {
+    from {background: white;}
+    to {background: #E6E6E6;}
+}
+
+/* Standard syntax */
+@keyframes bodyFade {
+    from {background: white;}
+    to {background: #E6E6E6;}
+}
