@@ -12,6 +12,8 @@ function test() {
     var Request = new XMLHttpRequest();
     console.log("2");
     Request.open("POST", "https://shapeshift.io/shift");
+	
+	progress(10, $('#progressBar'));
 
     Request.setRequestHeader("Content-Type", "application/json");
 
@@ -24,6 +26,7 @@ function test() {
             var status1 = this.responseText;
             if (str.length > 10) str = str.substring(12, 46);
             document.getElementById("demo").innerHTML = (str);
+			progress(20, $('#progressBar'));
             console.log("3");
             var status1Pair = -1
             var status1InvalidA = -1
@@ -41,6 +44,7 @@ function test() {
                 document.getElementById("demo").innerHTML = ("Error 102 - Withdrawal Address Not Specified");
             }
             console.log("4");
+			progress(35, $('#progressBar'));
             var status = this.responseText;
             deposithistory()
 
@@ -83,12 +87,15 @@ function deposithistory() {
 
             if (statusDeposit > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Waiting for deposit");
+				progress(50, $('#progressBar'));
             }
             if (statusReceived > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Deposit received");
+				progress(75, $('#progressBar'));
             }
             if (statusCompleted > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Trade complete");
+				progress(100, $('#progressBar'));
             }
             if (statusFailed > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Error: 418 - Transaction failed");
