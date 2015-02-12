@@ -1,6 +1,8 @@
 //Exchange api usage thingy
 //This is where the magick happens
-
+	
+	
+test: {
 function test() {
     console.log("1");
     var userInput = document.getElementById("userInput").value;
@@ -38,22 +40,22 @@ function test() {
             if (status1Pair > 1) {
                 document.getElementById("demo").innerHTML = ("Error 100 - Invalid exchange pair");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
             if (status1InvalidA > 1) {
                 document.getElementById("demo").innerHTML = ("Error 101 - Invalid address");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
             if (status1InvalidA2 > 1) {
                 document.getElementById("demo").innerHTML = ("Error 102 - Withdrawal Address Not Specified");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
 			if (status1Busy > 1) {
                 document.getElementById("demo").innerHTML = ("Error 103 - I am busy right now, sorry");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
             console.log("4");
 			progress(20, $('#progressBar'));
@@ -108,12 +110,12 @@ function deposithistory() {
             if (statusCompleted > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Trade complete");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
             if (statusFailed > 1) {
                 document.getElementById("depositInfo").innerHTML = ("Error: 418 - Transaction failed");
 				progress(100, $('#progressBar'));
-				break
+				return;
             }
             setTimeout("deposithistory()", 5000); /*delay*/
         }
@@ -121,3 +123,14 @@ function deposithistory() {
     var body = "test";
     Request.send(JSON.stringify(body));
 }
+}
+// boutton stuff (important)
+
+
+window.onload = function() {
+document.getElementById("footerText").innerHTML =("<p>&copy;  2014-" + new Date().getFullYear() + " Daniel Vestol. All rights reserved.</p>");
+var submit = document.getElementById("submit");
+submit.addEventListener("click", function() {
+      test()
+      }, false);
+};
