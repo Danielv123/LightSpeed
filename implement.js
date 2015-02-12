@@ -44,7 +44,7 @@ function test() {
                 document.getElementById("demo").innerHTML = ("Error 101 - Invalid address");
 				progress(100, $('#progressBar'));
 				break
-            } ight now, sorry
+            }
             if (status1InvalidA2 > 1) {
                 document.getElementById("demo").innerHTML = ("Error 102 - Withdrawal Address Not Specified");
 				progress(100, $('#progressBar'));
